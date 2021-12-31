@@ -55,15 +55,17 @@ discountInput.place(x=277.0, y=341.0, width=111.0, height=29.0)
 # Output
 output = StringVar()
 outputLabel = Label(window, text="", textvariable=output)
-outputLabel.place(x=602.0, y=332.0, width=111.0, height=29.0)
+outputLabel.place(x=550.0, y=332.0, width=219.0, height=29.0)
 
 # Calculation Function
 def calculateDiscountedPrice():
-    price = float(priceInput.get())
-    discount = float(discountInput.get())
-    discountedPrice = price - price * discount / 100
-    output.set(discountedPrice)
-
+    price = priceInput.get()
+    discount = discountInput.get()
+    try:
+        discountedPrice = float(price) - float(price) * float(discount) / 100
+        output.set(discountedPrice)
+    except ValueError:
+        output.set("Use numbers ya dummmy")
 
 # Button
 calculateButtonImage = PhotoImage(file=assets("calculateButton.png"))
