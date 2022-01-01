@@ -65,7 +65,7 @@ def calculateDiscountedPrice():
         discountedPrice = float(price) - float(price) * float(discount) / 100
         output.set(discountedPrice)
     except ValueError:
-        output.set("Use numbers ya dummmy")
+        output.set("Use numbers ya dummy")
 
 # Button
 calculateButtonImage = PhotoImage(file=assets("calculateButton.png"))
